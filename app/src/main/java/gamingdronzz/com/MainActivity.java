@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     WebView webView;
     final String removeMenu = "document.getElementsByClassName('navbar-toggle collapsed')[0].style.display=\"none\"; ";
     final String removeContact = "document.getElementsByClassName('w3l_contact')[0].style.display=\"none\"; ";
+    final String removeFooter = "document.getElementsByClassName('footer ')[0].style.display=\"none\"; ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 stringBuilder.append(removeMenu);
                                 stringBuilder.append(removeContact);
-
+                                stringBuilder.append(removeFooter);
                                 stringBuilder.append("} ) ()");
                                 view.loadUrl(stringBuilder.toString());
 
