@@ -15,7 +15,6 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         bindVIews();
-        //ShowNextActivity();
         StartAnimations();
     }
 
@@ -25,17 +24,11 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     private void StartAnimations() {
-        final Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
-        final Animation animationBounce = AnimationUtils.loadAnimation(this, R.anim.bounce);
-
+        final Animation anim = AnimationUtils.loadAnimation(this, R.anim.splash);
         anim.reset();
-        animationBounce.reset();
-
-
         imageView.clearAnimation();
-        imageView.startAnimation(animationBounce);
-
-        animationBounce.setAnimationListener(new Animation.AnimationListener() {
+        imageView.startAnimation(anim);
+        anim.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
@@ -56,10 +49,7 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     private void LoadNextActivity() {
-
-
-        Intent intent = new Intent();
-        intent.setClass(getApplicationContext(), MainActivity.class);
+        Intent intent = new Intent(SplashScreen.this, MainActivity.class);
         startActivity(intent);
     }
 }

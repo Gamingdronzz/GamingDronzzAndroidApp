@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GamingDronzz.iml" filepath="$PROJECT_DIR$/GamingDronzz.iml" />
+      <module fileurl="file://G:\AndroidProjects\GamingDronzzAndroidApp\GamingDronzz.iml" filepath="G:\AndroidProjects\GamingDronzzAndroidApp\GamingDronzz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GamingDronzzAndroidApp.iml" filepath="$PROJECT_DIR$/GamingDronzzAndroidApp.iml" />
       <module fileurl="file://E:\Documents\AndroidStudioProjects\GamingDronzz\GamingDronzzAndroidApp.iml" filepath="E:\Documents\AndroidStudioProjects\GamingDronzz\GamingDronzzAndroidApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
