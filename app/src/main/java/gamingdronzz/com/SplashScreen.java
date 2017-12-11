@@ -8,20 +8,34 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class SplashScreen extends AppCompatActivity {
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        startAnimation();
+        bindVIews();
+        //ShowNextActivity();
+        StartAnimations();
     }
 
-    private void startAnimation() {
-        Animation anim = AnimationUtils.loadAnimation(this, R.anim.splash);
+    private void bindVIews() {
+
+        imageView = (ImageView) findViewById(R.id.imageSplash);
+    }
+
+    private void StartAnimations() {
+        final Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
+        final Animation animationBounce = AnimationUtils.loadAnimation(this, R.anim.bounce);
+
         anim.reset();
-        ImageView imageView = (ImageView) findViewById(R.id.imageView);
-        imageView.startAnimation(anim);
-        anim.setAnimationListener(new Animation.AnimationListener() {
+        animationBounce.reset();
+
+
+        imageView.clearAnimation();
+        imageView.startAnimation(animationBounce);
+
+        animationBounce.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
@@ -29,7 +43,9 @@ public class SplashScreen extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                nextActivity();
+                LoadNextActivity();
+                finish();
+
             }
 
             @Override
@@ -39,8 +55,12 @@ public class SplashScreen extends AppCompatActivity {
         });
     }
 
-    private void nextActivity() {
-        Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+    private void LoadNextActivity() {
+
+
+        Intent intent = new Intent();
+        intent.setClass(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
 }
+

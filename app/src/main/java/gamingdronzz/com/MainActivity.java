@@ -1,9 +1,9 @@
 package gamingdronzz.com;
 
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
@@ -13,10 +13,11 @@ import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    WebView webView;
     final String removeMenu = "document.getElementsByClassName('navbar-toggle collapsed')[0].style.display=\"none\"; ";
     final String removeContact = "document.getElementsByClassName('w3l_contact')[0].style.display=\"none\"; ";
-    final String removeFooter = "document.getElementsByClassName('footer ')[0].style.display=\"none\"; ";
+    final String removeBanner = "document.getElementsByClassName('banner')[0].style.display=\"none\"; ";
+    final String removeFooter = "document.getElementsByClassName('footer')[0].style.display=\"none\"; ";
+    WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 stringBuilder.append(removeMenu);
                                 stringBuilder.append(removeContact);
+                                stringBuilder.append(removeBanner);
                                 stringBuilder.append(removeFooter);
                                 stringBuilder.append("} ) ()");
                                 view.loadUrl(stringBuilder.toString());
